@@ -1,0 +1,7 @@
+pydantic
+pydantic_settings
+fastapi
+uvicorn
+httpx
+python-dotenv
+python-telegram-bot

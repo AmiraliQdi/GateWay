@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: FastAPI Gateway",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "uvicorn", // Run the uvicorn module
+            "args": [
+                "app.main:app", // Tell uvicorn where your app is
+                "--reload",
+                "--host", "0.0.0.0",
+                "--port", "9000" // Or whatever port you prefer
+            ],
+            "jinja": true,
+            "console": "integratedTerminal",
+            "env": {
+                // This line adds the 'server' directory to Python's search path.
+                // It allows non-relative imports (like 'from backend_server import app')
+                // to work correctly when debugging modules inside the 'server' folder,
+                // without needing to modify the source code.
+                "PYTHONPATH": "${workspaceFolder}"
+            }
+        }
+    ]
+}
